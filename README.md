@@ -2,28 +2,6 @@
 
 Trabalho da disciplina de Compiladores: implementação de um Analisador Léxico em C para a gramática fornecida.
 
-## A linguagem
-
-A partir da gramática do PDF, a linguagem reconhecida pelo analisador possui:
-
-- **Tipos primitivos**: `integer`, `char`, `boolean`, `string`
-- **Tipos compostos**: `array ... of ...` e `struct { ... }`, além de sinônimos de tipo (`type`)
-- **Declarações**: variáveis (`var`) e funções (`function`)
-- **Comandos**: `if`/`else`, `while`, `do`, `break`, `continue`, blocos (`{ }`) e atribuição (`=`)
-- **Operadores**: lógicos (`&&`, `||`), relacionais (`<`, `>`, `<=`, `>=`, `==`, `!=`), aritméticos (`+`, `-`, `*`, `/`), incremento/decremento (`++`, `--`), negação (`!`) e acesso a membros/arrays (`.`, `[` `]`)
-- **Literais**: `true`/`false`, caractere (`'x'`), string (`"..."`) e numeral inteiro
-- **Identificadores**: `letra (letra | digito)*` — o analisador segue essa definição à risca, ou seja, `_` **não** é aceito em identificadores (veja [Limitações conhecidas](#limitações-conhecidas))
-
-## Estrutura do projeto
-
-| Arquivo | Conteúdo |
-|---|---|
-| [lexer.h](lexer.h) | Enumeração de tokens (`TokenType`), struct `Token`, struct de constantes (`t_const`) e API pública do lexer |
-| [lexer.c](lexer.c) | Implementação do analisador léxico: `nextToken`, tabela de palavras reservadas, tabela hash de identificadores, tabela de constantes |
-| [main.c](main.c) | Driver de teste: lê um arquivo-fonte e imprime a sequência de tokens reconhecidos |
-| [entrada.txt](entrada.txt) | Programa de exemplo usado para validar o analisador |
-| [Makefile](Makefile) | Automatiza a compilação (`make`), execução (`make run`) e limpeza (`make clean`) |
-
 ## Implementação
 
 O analisador foi construído em C (padrão C99) seguindo o roteiro proposto no trabalho:
