@@ -1,0 +1,7 @@
+function f(a: integer): integer
+{
+    var x: integer;
+    x = 'c';
+    if (x) x = y;
+    return true;
+}

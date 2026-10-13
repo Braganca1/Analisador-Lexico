@@ -1,0 +1,6 @@
+function f(s: string): char
+{
+    var c: char;
+    c = s['a'];
+    return c;
+}

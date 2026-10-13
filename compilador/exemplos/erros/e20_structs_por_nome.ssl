@@ -1,0 +1,10 @@
+type A = struct { x: integer }
+type B = struct { x: integer }
+type A2 = A
+function f(a: A, b: B): integer
+{
+    var c: A2;
+    c = a;
+    a = b;
+    return c.x;
+}

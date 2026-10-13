@@ -1,0 +1,7 @@
+type P = struct { x: integer }
+function f(p: P): integer
+{
+    var x: integer;
+    x = p.z;
+    return x;
+}

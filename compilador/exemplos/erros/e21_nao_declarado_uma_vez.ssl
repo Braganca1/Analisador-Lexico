@@ -1,0 +1,11 @@
+function f(a: integer): integer
+{
+    var x: integer;
+    x = z;
+    x = z + 1;
+    {
+        var w: integer;
+        w = z;
+    }
+    return x;
+}

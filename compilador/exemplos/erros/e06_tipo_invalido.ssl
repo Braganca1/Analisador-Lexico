@@ -1,0 +1,6 @@
+function f(a: integer): integer
+{
+    var b: boolean;
+    b = b + b;
+    return a;
+}

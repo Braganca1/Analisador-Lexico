@@ -1,0 +1,6 @@
+function g(a: integer, b: integer): integer
+{
+    var x: integer;
+    x = g(1);
+    return x;
+}

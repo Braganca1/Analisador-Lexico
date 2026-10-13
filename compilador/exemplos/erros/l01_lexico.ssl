@@ -1,0 +1,7 @@
+function f(a: integer): integer
+{
+    var x: integer;
+    x = 1 @ 2;
+    return_x = 3;
+    return x;
+}

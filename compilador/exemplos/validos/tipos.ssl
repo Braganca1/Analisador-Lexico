@@ -1,0 +1,92 @@
+type Nome = string
+type Ponto = struct {
+    x, y: integer;
+    rotulo: Nome
+}
+type Pontos = array [10] of Ponto
+type Coord = integer
+
+function distancia2(p: Ponto, q: Ponto): Coord
+{
+    var dx, dy: integer;
+    dx = p.x - q.x;
+    dy = p.y - q.y;
+    return dx * dx + dy * dy;
+}
+
+function maisProximo(v: Pontos, n: integer, alvo: Ponto): integer
+{
+    var i, melhor: integer;
+    var achou: boolean;
+    i = 0;
+    melhor = 0;
+    achou = false;
+    do
+    {
+        var d: Coord;
+        d = distancia2(v[i], alvo);
+        if (d == 0)
+        {
+            var exato: boolean;
+            exato = true;
+            achou = exato;
+            break;
+        }
+        if (d < distancia2(v[melhor], alvo))
+            melhor = i;
+        i = i + 1;
+    } while (i < n && !achou);
+    return melhor;
+}
+
+function inicial(p: Ponto): char
+{
+    var c: char;
+    c = p.rotulo[0];
+    return c;
+}
+
+function rotular(p: Ponto, sufixo: string): Ponto
+{
+    var r: Ponto;
+    r = p;
+    r.rotulo = p.rotulo + sufixo;
+    r.x = -r.x;
+    return r;
+}
+
+function sinal(x: integer): integer
+{
+    var r: integer;
+    if (x > 0) r = 1; else if (x < 0) r = -1; else r = 0;
+    return r;
+}
+
+function fib(n: integer): integer
+{
+    var a: integer;
+    if (n < 2)
+        return n;
+    a = fib(n - 1) + fib(n - 2);
+    return a;
+}
+
+function escopo(x: integer): integer
+{
+    var y: integer;
+    y = x;
+    {
+        var x: boolean;
+        x = y > 0;
+        if (x) y = y + 1;
+    }
+    while (true)
+    {
+        var k: integer;
+        k = y;
+        if (k > 10 || k == 0) break;
+        y = y * 2;
+        continue;
+    }
+    return y + x;
+}

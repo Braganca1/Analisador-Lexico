@@ -1,0 +1,6 @@
+function f(): integer
+{
+    var x: integer;
+    x = 0;
+    return x;
+}

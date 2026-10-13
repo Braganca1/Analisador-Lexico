@@ -1,0 +1,9 @@
+function f(a: integer): integer
+{
+    var v: Desconhecido;
+    var x: integer;
+    x = v.campo + v[0] * v;
+    v = 'c';
+    x = g(v, 1);
+    return x;
+}

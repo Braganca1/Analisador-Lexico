@@ -1,0 +1,19 @@
+type Ponto = struct {
+    x, y : integer
+}
+
+function soma(a: integer, b: integer): integer {
+    var resultado: integer;
+    if (a >= b) {
+        resultado = a + b;
+    } else {
+        resultado = a - b;
+    }
+    while (resultado < 100) {
+        resultado++;
+    }
+    retorno = 'x';
+    nome = "teste string";
+    continue;
+    break;
+}
